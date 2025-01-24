@@ -40,23 +40,36 @@
 
   <div class="login-container">
     <h2 class="login-header">Login</h2>
-    <form onsubmit="alert('User logged in!'); return false;">
+    <form id="loginForm" onsubmit="handleLogin(event)">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" required disabled>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required disabled>
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
 
-  <!-- Bootstrap JS and dependencies (optional) 
+  <!-- Bootstrap JS and dependencies (optional) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent form from submitting
+      
+      // Show the alert message
+      alert('User logged in!');
+      
+      // Enable the fields after the alert is dismissed
+      document.getElementById('username').disabled = false;
+      document.getElementById('password').disabled = false;
+    }
+  </script>
 
 </body>
 </html>
