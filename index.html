@@ -52,5 +52,17 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
+  </div>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting
+
+      // Get the username from the input field
+      var username = document.getElementById('username').value;
+
+      // Display a popup with the login message
+      alert('User logged in as ' + username + '!');
+    });
+  </script>
 </body>
 </html>
