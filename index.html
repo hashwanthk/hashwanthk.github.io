@@ -40,7 +40,7 @@
 
   <div class="login-container">
     <h2 class="login-header">Login</h2>
-    <form>
+    <form onsubmit="alert('User logged in!'); return false;">
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="username" placeholder="Enter username" required>
@@ -52,17 +52,11 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
-  </div>
-    <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from submitting
 
-      // Get the username from the input field
-      var username = document.getElementById('username').value;
+  <!-- Bootstrap JS and dependencies (optional) 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
-      // Display a popup with the login message
-      alert('User logged in as ' + username + '!');
-    });
-  </script>
 </body>
 </html>
