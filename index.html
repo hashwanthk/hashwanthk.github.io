@@ -43,11 +43,11 @@
     <form id="loginForm" onsubmit="handleLogin(event)">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" placeholder="Enter username" required disabled>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password" required disabled>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
@@ -61,10 +61,14 @@
   <script>
     function handleLogin(event) {
       event.preventDefault(); // Prevent form from submitting
-      
+
+      // Disable the fields before showing the alert
+      document.getElementById('username').disabled = true;
+      document.getElementById('password').disabled = true;
+
       // Show the alert message
       alert('User logged in!');
-      
+
       // Enable the fields after the alert is dismissed
       document.getElementById('username').disabled = false;
       document.getElementById('password').disabled = false;
